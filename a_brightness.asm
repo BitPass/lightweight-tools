@@ -26,22 +26,22 @@ MainLoopAdd:
 	inc r10                             ; move to the next byte in the arrays
 	dec r9d                             ; decrememnt our counter
 	jnz MainLoopAdd                     ; jump if there's more
-	ret	                                ; return to c++
+	ret                                 ; return to c++
 
 SubtractBrightness:
-	mov r11w, 0			                ; move 0 into the underflow
-	neg r8w, 			                ; negate the value we're subbing
+	mov r11w, 0                         ; move 0 into the underflow
+	neg r8w,                            ; negate the value we're subbing
 	
 
 MainLoopSubtract
 	mov al, byte ptr [rdx + r10]	    ; read byte from original image
-	sub al, r8b 			            ; sub the brightness
-	cmovc ax, r11w			            ; set to 255 on overflow
+	sub al, r8b                         ; sub the brightness
+	cmovc ax, r11w                      ; set to 255 on overflow
 	mov byte ptr[rcx + r10], al         ; store the answer in scan0
-	inc r10				                ; move to the next byte in the arrays
-	dec r9d				                ; decrememnt our counter
-	jnz MainLoopSubtract		        ; jump if there's more
-	ret				                    ; return to c++
+	inc r10                             ; move to the next byte in the arrays
+	dec r9d                             ; decrememnt our counter
+	jnz MainLoopSubtract                ; jump if there's more
+	ret                                 ; return to c++
 
 ASMAdjustBrightness endp
 end

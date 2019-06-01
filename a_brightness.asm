@@ -1,11 +1,12 @@
-;	64bit CPU-based smooth brightness adjuster
-;   3-6x speedup over managed C++
-; 	based on whatsacreel's youtube tutorial x64 Assembly and C++ Tutorial 25
-;	void ASMAdjustBrightness(
-;	unsigned char* bmpDataScan0,    = RCX
-;	unsigned char* bmpOriginal,     = RDX
-;	short value,(added)             = R8W
-;	int imageSizeInBytes            = R9D
+;       64-bit CPU-based smooth brightness adjuster
+;       3-6x speedup over managed C++
+;       based on whatsacreel's youtube tutorial x64 Assembly and C++ Tutorial 25
+;
+;       void ASMAdjustBrightness(
+;       unsigned char* bmpDataScan0,    = RCX
+;       unsigned char* bmpOriginal,     = RDX
+;       short value,(added)             = R8W
+;       int imageSizeInBytes            = R9D
 
 .data
 
